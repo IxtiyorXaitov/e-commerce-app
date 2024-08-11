@@ -2,33 +2,6 @@
 
 Welcome to this comprehensive guide to building an e-commerce web application using Domain-Driven Design (DDD) and microservices architecture. This roadmap is tailored for learners who want to explore the intricacies of modern application development.
 
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Architecture Overview](#architecture-overview)
-3. [Getting Started](#getting-started)
-    - [Mono Repo Approach](#mono-repo-approach)
-    - [Infrastructure and Tools](#infrastructure-and-tools)
-4. [Microservices Development](#microservices-development)
-    - [Configuration Server](#configuration-server)
-    - [Discovery Server](#discovery-server)
-    - [Customer Microservice](#customer-microservice)
-    - [Product Microservice](#product-microservice)
-    - [Order Microservice](#order-microservice)
-    - [Payment Microservice](#payment-microservice)
-    - [Notification Microservice](#notification-microservice)
-5. [Event-Driven Architecture](#event-driven-architecture)
-    - [Kafka & Zookeeper Setup](#kafka--zookeeper-setup)
-    - [Order Confirmation](#order-confirmation)
-6. [API Gateway & Security](#api-gateway--security)
-    - [API Gateway](#api-gateway)
-    - [Security with Keycloak](#security-with-keycloak)
-7. [Monitoring and Logging](#monitoring-and-logging)
-    - [Zipkin Setup](#zipkin-setup)
-    - [Log Management](#log-management)
-8. [Testing](#testing)
-9. [Conclusion](#conclusion)
-
 ## Introduction
 
 This project is a step-by-step guide to developing an e-commerce web application using the principles of Domain-Driven Design (DDD) and microservices architecture. The primary goal is to provide a hands-on learning experience, covering the entire development lifecycle, from setting up the infrastructure to deploying a secure, fully-functional application.
