@@ -1,4 +1,4 @@
-package com.ixtiyor.customer.dto;
+package com.ixtiyor.product.dto;
 
 import java.util.Map;
 

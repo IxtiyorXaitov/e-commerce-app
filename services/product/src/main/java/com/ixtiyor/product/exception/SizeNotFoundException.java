@@ -7,4 +7,5 @@ import lombok.EqualsAndHashCode;
 @Data
 public class SizeNotFoundException extends RuntimeException {
     private final String message;
+    private final String description;
 }
