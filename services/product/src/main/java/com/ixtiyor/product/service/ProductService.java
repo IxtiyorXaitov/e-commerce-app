@@ -10,6 +10,7 @@ import com.ixtiyor.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -21,23 +22,28 @@ public class ProductService {
     private final ProductMapper mapper;
 
     public ProductDTO create(ProductAddDTO dto) {
+        log.info("dto: {}", dto);
         ProductEntity entity = mapper.mapToEntity(dto);
         repository.save(entity);
         return mapper.mapToDTO(entity);
     }
 
     public ProductDTO update(Long id, ProductEditDTO dto) {
+        log.info("id: {} dto: {}", id, dto);
         ProductEntity entity = findProductById(id);
         return null;
     }
 
     public ProductDTO get(Long id) {
+        log.info("id: {}", id);
         ProductEntity entity = findProductById(id);
         return mapper.mapToDTO(entity);
     }
 
     public Page<ProductDTO> getAll(Integer page, Integer size) {
-        return null;
+        log.info("page: {} size: {}", page, size);
+        PageRequest pageRequest = PageRequest.of(page, size);
+        return repository.findAll(pageRequest).map(mapper::mapToDTO);
     }
 
     private ProductEntity findProductById(Long id) {
