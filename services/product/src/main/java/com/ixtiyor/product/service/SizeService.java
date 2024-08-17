@@ -31,7 +31,9 @@ public class SizeService {
     public SizeDTO update(Long id, SizeEditDTO dto) {
         log.info("id: {} dto: {}", id, dto);
         SizeEntity entity = findSizeById(id);
-        return null;
+        mapper.update(entity, dto);
+        repository.save(entity);
+        return mapper.mapToDTO(entity);
     }
 
     public SizeDTO get(Long id) {

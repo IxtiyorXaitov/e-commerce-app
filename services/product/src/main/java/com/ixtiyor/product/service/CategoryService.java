@@ -31,8 +31,9 @@ public class CategoryService {
     public CategoryDTO update(Long id, CategoryEditDTO dto) {
         log.info("id: {} dto: {}", id, dto);
         CategoryEntity entity = findCategoryById(id);
-
-        return null;
+        mapper.update(entity, dto);
+        repository.save(entity);
+        return mapper.mapToDTO(entity);
     }
 
     public CategoryDTO get(Long id) {

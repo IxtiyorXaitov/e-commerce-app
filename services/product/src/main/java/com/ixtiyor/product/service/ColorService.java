@@ -31,7 +31,9 @@ public class ColorService {
     public ColorDTO update(Long id, ColorEditDTO dto) {
         log.info("id: {} dto: {}", id, dto);
         ColorEntity entity = findColorById(id);
-        return null;
+        mapper.update(entity, dto);
+        repository.save(entity);
+        return mapper.mapToDTO(entity);
     }
 
     public ColorDTO get(Long id) {

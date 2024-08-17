@@ -31,7 +31,9 @@ public class ProductService {
     public ProductDTO update(Long id, ProductEditDTO dto) {
         log.info("id: {} dto: {}", id, dto);
         ProductEntity entity = findProductById(id);
-        return null;
+        mapper.update(entity, dto);
+        repository.save(entity);
+        return mapper.mapToDTO(entity);
     }
 
     public ProductDTO get(Long id) {
