@@ -1,11 +1,7 @@
 package com.ixtiyor.product.exception;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@EqualsAndHashCode(callSuper = true)
-@Data
-public class ColorNotFoundException extends RuntimeException {
-    private final String message;
-    private final String description;
+public class ColorNotFoundException extends BaseException {
+    public ColorNotFoundException(Long id) {
+        super("color.not.found.exception.message", "color.not.found.exception.description", "C404", id);
+    }
 }

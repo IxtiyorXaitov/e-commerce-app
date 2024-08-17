@@ -1,10 +1,7 @@
 package com.ixtiyor.customer.exception;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@EqualsAndHashCode(callSuper = true)
-@Data
-public class CustomerNotFoundException extends RuntimeException {
-    private final String message;
+public class CustomerNotFoundException extends BaseException {
+    public CustomerNotFoundException(String id) {
+        super("customer.not.found.exception.message", "customer.not.found.exception.description", "C404", id);
+    }
 }

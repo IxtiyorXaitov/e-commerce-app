@@ -89,7 +89,7 @@ public class CustomerService {
 
     private CustomerEntity findCustomerById(String id) {
         return repository.findById(id)
-                .orElseThrow(() -> new CustomerNotFoundException(String.format("Customer not found with this id: %s", id)));
+                .orElseThrow(() -> new CustomerNotFoundException(id));
     }
 
 }

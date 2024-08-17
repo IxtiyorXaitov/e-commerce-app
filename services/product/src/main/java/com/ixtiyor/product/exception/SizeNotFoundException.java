@@ -1,11 +1,7 @@
 package com.ixtiyor.product.exception;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@EqualsAndHashCode(callSuper = true)
-@Data
-public class SizeNotFoundException extends RuntimeException {
-    private final String message;
-    private final String description;
+public class SizeNotFoundException extends BaseException {
+    public SizeNotFoundException(Long id) {
+        super("size.not.found.exception.message", "size.not.found.exception.description", "S404", id);
+    }
 }

@@ -1,4 +1,4 @@
-package com.ixtiyor.product.configuration;
+package com.ixtiyor.customer.configuration;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Configuration;

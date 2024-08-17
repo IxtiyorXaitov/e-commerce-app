@@ -42,6 +42,6 @@ public class ProductService {
 
     private ProductEntity findProductById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ProductNotFoundException(String.format("Product not found with this id: %d", id)));
+                .orElseThrow(() -> new ProductNotFoundException(id));
     }
 }

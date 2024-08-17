@@ -42,6 +42,6 @@ public class ColorService {
 
     private ColorEntity findColorById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ColorNotFoundException(String.format("Color not found with this id: %d", id)));
+                .orElseThrow(() -> new ColorNotFoundException(id));
     }
 }

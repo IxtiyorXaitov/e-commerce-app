@@ -1,4 +1,4 @@
-package com.ixtiyor.product.configuration;
+package com.ixtiyor.customer.configuration;
 
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Component;

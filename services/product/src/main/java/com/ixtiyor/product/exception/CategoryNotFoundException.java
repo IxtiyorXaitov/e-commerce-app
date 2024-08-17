@@ -1,11 +1,7 @@
 package com.ixtiyor.product.exception;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@EqualsAndHashCode(callSuper = true)
-@Data
-public class CategoryNotFoundException extends RuntimeException {
-    private final String message;
-    private final String description;
+public class CategoryNotFoundException extends BaseException {
+    public CategoryNotFoundException(Long id) {
+        super("category.not.found.exception.message", "category.not.found.exception.description", "C404",id);
+    }
 }

@@ -1,4 +1,4 @@
-package com.ixtiyor.product.configuration;
+package com.ixtiyor.customer.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

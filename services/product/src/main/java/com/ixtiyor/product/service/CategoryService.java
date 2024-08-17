@@ -43,6 +43,6 @@ public class CategoryService {
 
     private CategoryEntity findCategoryById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new CategoryNotFoundException(String.format("Category not found with this id: %d", id)));
+                .orElseThrow(() -> new CategoryNotFoundException(id));
     }
 }

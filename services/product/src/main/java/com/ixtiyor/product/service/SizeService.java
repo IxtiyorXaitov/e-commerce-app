@@ -42,6 +42,6 @@ public class SizeService {
 
     private SizeEntity findSizeById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new SizeNotFoundException(String.format("Size not found with this id: %d", id)));
+                .orElseThrow(() -> new SizeNotFoundException(id));
     }
 }

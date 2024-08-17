@@ -1,10 +1,7 @@
 package com.ixtiyor.product.handler;
 
 import com.ixtiyor.product.dto.ErrorDTO;
-import com.ixtiyor.product.exception.CategoryNotFoundException;
-import com.ixtiyor.product.exception.ColorNotFoundException;
-import com.ixtiyor.product.exception.ProductNotFoundException;
-import com.ixtiyor.product.exception.SizeNotFoundException;
+import com.ixtiyor.product.exception.BaseException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -42,11 +39,11 @@ public class GlobalExceptionHandler {
                 .body(dto);
     }
 
-    @ExceptionHandler(CategoryNotFoundException.class)
-    public ResponseEntity<ErrorDTO> handle(CategoryNotFoundException ex) {
+    @ExceptionHandler(BaseException.class)
+    public ResponseEntity<ErrorDTO> handle(BaseException ex) {
 
         ErrorDTO dto = new ErrorDTO(
-                "10400",
+                ex.getCode(),
                 ex.getMessage(),
                 ex.getDescription(),
                 null
@@ -57,48 +54,4 @@ public class GlobalExceptionHandler {
                 .body(dto);
     }
 
-    @ExceptionHandler(ColorNotFoundException.class)
-    public ResponseEntity<ErrorDTO> handle(ColorNotFoundException ex) {
-
-        ErrorDTO dto = new ErrorDTO(
-                "10400",
-                ex.getMessage(),
-                ex.getDescription(),
-                null
-        );
-
-        return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
-                .body(dto);
-    }
-
-    @ExceptionHandler(ProductNotFoundException.class)
-    public ResponseEntity<ErrorDTO> handle(ProductNotFoundException ex) {
-
-        ErrorDTO dto = new ErrorDTO(
-                "10400",
-                ex.getMessage(),
-                ex.getDescription(),
-                null
-        );
-
-        return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
-                .body(dto);
-    }
-
-    @ExceptionHandler(SizeNotFoundException.class)
-    public ResponseEntity<ErrorDTO> handle(SizeNotFoundException ex) {
-
-        ErrorDTO dto = new ErrorDTO(
-                "10400",
-                ex.getMessage(),
-                ex.getDescription(),
-                null
-        );
-
-        return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
-                .body(dto);
-    }
 }

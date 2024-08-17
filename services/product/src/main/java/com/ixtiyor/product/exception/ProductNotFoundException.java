@@ -1,11 +1,7 @@
 package com.ixtiyor.product.exception;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@EqualsAndHashCode(callSuper = true)
-@Data
-public class ProductNotFoundException extends RuntimeException {
-    private final String message;
-    private final String description;
+public class ProductNotFoundException extends BaseException {
+    public ProductNotFoundException(Long id) {
+        super("product.not.found.exception.message", "product.not.found.exception.description", "P404", id);
+    }
 }
